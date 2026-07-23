@@ -32,7 +32,20 @@ export type IconName =
   | "arrow-down"
   | "plus"
   | "logout"
-  | "external";
+  | "external"
+  | "archive"
+  | "restore"
+  | "more"
+  | "filter"
+  | "list"
+  | "close"
+  | "check"
+  | "building"
+  | "upload"
+  | "mail"
+  | "lock"
+  | "eye"
+  | "flag";
 
 const paths: Record<IconName, ReactNode> = {
   home: <><path d="M3 10.5 10 4l7 6.5" /><path d="M5 9v7h10V9" /></>,
@@ -179,6 +192,75 @@ const paths: Record<IconName, ReactNode> = {
       <path d="M11 4h5v5" />
       <path d="M16 4 9 11" />
       <path d="M14 11.5V15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3.5" />
+    </>
+  ),
+  archive: (
+    <>
+      <rect x="3" y="4" width="14" height="3.4" rx="1" />
+      <path d="M4.5 7.4V15a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V7.4" />
+      <path d="M8 10.5h4" />
+    </>
+  ),
+  restore: (
+    <>
+      <path d="M3.4 9.5a6.8 6.8 0 1 1 .6 4" />
+      <path d="M3.2 13.5V9.5h4" />
+    </>
+  ),
+  more: (
+    <>
+      <circle cx="4.5" cy="10" r="1.15" fill="currentColor" stroke="none" />
+      <circle cx="10" cy="10" r="1.15" fill="currentColor" stroke="none" />
+      <circle cx="15.5" cy="10" r="1.15" fill="currentColor" stroke="none" />
+    </>
+  ),
+  filter: <path d="M3.5 4.5h13l-5 6.2V15l-3 1.5v-6.8z" />,
+  list: (
+    <>
+      <path d="M7 5h10M7 10h10M7 15h10" />
+      <circle cx="3.6" cy="5" r="1" fill="currentColor" stroke="none" />
+      <circle cx="3.6" cy="10" r="1" fill="currentColor" stroke="none" />
+      <circle cx="3.6" cy="15" r="1" fill="currentColor" stroke="none" />
+    </>
+  ),
+  close: <path d="M5 5l10 10M15 5 5 15" />,
+  check: <path d="M4.5 10.5 8 14l7.5-8" />,
+  building: (
+    <>
+      <path d="M4.5 17V4.6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1V17" />
+      <path d="M3 17h14" />
+      <path d="M7.5 7h1.6M11 7h1.6M7.5 10h1.6M11 10h1.6" />
+      <path d="M8.3 17v-2.6h3.4V17" />
+    </>
+  ),
+  upload: (
+    <>
+      <path d="M10 13.5V4M6.3 7.3 10 3.6l3.7 3.7" />
+      <path d="M4.5 16.5h11" />
+    </>
+  ),
+  mail: (
+    <>
+      <rect x="3" y="5" width="14" height="10" rx="2" />
+      <path d="m3.5 6.5 6.5 4.7 6.5-4.7" />
+    </>
+  ),
+  lock: (
+    <>
+      <rect x="4.5" y="9" width="11" height="7.5" rx="1.6" />
+      <path d="M7 9V6.8a3 3 0 0 1 6 0V9" />
+    </>
+  ),
+  eye: (
+    <>
+      <path d="M2.5 10S5.3 5 10 5s7.5 5 7.5 5-2.8 5-7.5 5-7.5-5-7.5-5z" />
+      <circle cx="10" cy="10" r="2.2" />
+    </>
+  ),
+  flag: (
+    <>
+      <path d="M5 3.2v13.6" />
+      <path d="M5 4.2h9l-2 2.8 2 2.8H5" />
     </>
   ),
 };

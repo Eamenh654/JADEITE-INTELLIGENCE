@@ -12,6 +12,8 @@ const plate: Record<NonNullable<LogoProps["size"]>, string> = {
   lg: "h-16 px-5",
 };
 
+
+
 /** Jadeite Ventures mark on a white plate (reads on any background). */
 export function Logo({ size = "md", withSubtitle = false, className = "" }: LogoProps) {
   return (
