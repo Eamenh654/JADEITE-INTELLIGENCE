@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+/* =====================================================================
+   JADEITE INTELLIGENCE HUB — Design tokens
+   Two typefaces:  Jost (display)  ·  Public Sans (body/UI)
+   Palette:        jade + gold on a warm paper / deep ink neutral base
+   Theme:          light default, dark via [data-theme] or system
+   ===================================================================== */
+
+@theme inline {
+  /* Type */
+  --font-display: 'Jost', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Public Sans', ui-sans-serif, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Surfaces & ink (theme-switchable via the raw vars below) */
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-paper-sunken: var(--paper-sunken);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+
+  /* Jade */
+  --color-jade-950: var(--jade-950);
+  --color-jade-900: var(--jade-900);
+  --color-jade-800: var(--jade-800);
+  --color-jade-700: var(--jade-700);
+  --color-jade-600: var(--jade-600);
+  --color-jade-500: var(--jade-500);
+  --color-jade-400: var(--jade-400);
+  --color-jade-100: var(--jade-100);
+  --color-jade-50: var(--jade-050);
+
+  /* Gold */
+  --color-gold-700: var(--gold-700);
+  --color-gold-600: var(--gold-600);
+  --color-gold-500: var(--gold-500);
+  --color-gold-100: var(--gold-100);
+
+  /* Status */
+  --color-good: var(--good);
+  --color-good-bg: var(--good-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+  --color-critical: var(--critical);
+  --color-critical-bg: var(--critical-bg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+}
+
+/* ---------- Light (default) ---------- */
+:root {
+  --paper: #F6F4EC;
+  --paper-raised: #FFFFFF;
+  --paper-sunken: #EFEBDE;
+  --ink: #16231C;
+  --ink-soft: #54655A;
+  --ink-faint: #8A9A8E;
+  --line: #DFD9C6;
+  --line-soft: #EAE5D5;
+
+  --jade-950: #0B241A;
+  --jade-900: #0F3324;
+  --jade-800: #144030;
+  --jade-700: #1B5B41;
+  --jade-600: #227450;
+  --jade-500: #2E9C6B;
+  --jade-400: #4BB683;
+  --jade-100: #E3F1E8;
+  --jade-050: #EEF7F1;
+
+  --gold-700: #8C6A34;
+  --gold-600: #A67C3D;
+  --gold-500: #B4894F;
+  --gold-100: #F3E8D2;
+
+  --good: #2F9E5B;      --good-bg: #E4F5EA;
+  --warn: #B9812A;      --warn-bg: #FBF0DA;
+  --critical: #BE4430;  --critical-bg: #FBE7E1;
+  --info: #3C6EA0;      --info-bg: #E7EFF7;
+
+  --shadow-sm: 0 1px 2px rgba(15, 51, 36, .06), 0 1px 1px rgba(15, 51, 36, .04);
+  --shadow-md: 0 6px 20px rgba(15, 51, 36, .08), 0 2px 6px rgba(15, 51, 36, .05);
+  --shadow-lg: 0 16px 40px rgba(15, 51, 36, .14), 0 4px 12px rgba(15, 51, 36, .08);
+
+  color-scheme: light;
+}
+
+/* ---------- Dark: explicit toggle ---------- */
+:root[data-theme="dark"] {
+  --paper: #0B120E;
+  --paper-raised: #121C16;
+  --paper-sunken: #0E1712;
+  --ink: #EDEFE9;
+  --ink-soft: #A3B2A6;
+  --ink-faint: #65756A;
+  --line: #22322A;
+  --line-soft: #1A251F;
+
+  --jade-950: #081712;
+  --jade-900: #0C2118;
+  --jade-800: #122C21;
+  --jade-700: #1D4A36;
+  --jade-600: #2A6B4B;
+  --jade-500: #42C089;
+  --jade-400: #5FD4A0;
+  --jade-100: rgba(66, 192, 137, .14);
+  --jade-050: rgba(66, 192, 137, .08);
+
+  --gold-700: #D9B078;
+  --gold-600: #D2A45E;
+  --gold-500: #C6954E;
+  --gold-100: rgba(198, 149, 78, .14);
+
+  --good: #49C287;      --good-bg: rgba(73, 194, 135, .14);
+  --warn: #DDAA55;      --warn-bg: rgba(221, 170, 85, .14);
+  --critical: #E27A63;  --critical-bg: rgba(226, 122, 99, .14);
+  --info: #7BAAD9;      --info-bg: rgba(123, 170, 217, .14);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, .35);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, .5);
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0B120E;
+    --paper-raised: #121C16;
+    --paper-sunken: #0E1712;
+    --ink: #EDEFE9;
+    --ink-soft: #A3B2A6;
+    --ink-faint: #65756A;
+    --line: #22322A;
+    --line-soft: #1A251F;
+
+    --jade-950: #081712;
+    --jade-900: #0C2118;
+    --jade-800: #122C21;
+    --jade-700: #1D4A36;
+    --jade-600: #2A6B4B;
+    --jade-500: #42C089;
+    --jade-400: #5FD4A0;
+    --jade-100: rgba(66, 192, 137, .14);
+    --jade-050: rgba(66, 192, 137, .08);
+
+    --gold-700: #D9B078;
+    --gold-600: #D2A45E;
+    --gold-500: #C6954E;
+    --gold-100: rgba(198, 149, 78, .14);
+
+    --good: #49C287;      --good-bg: rgba(73, 194, 135, .14);
+    --warn: #DDAA55;      --warn-bg: rgba(221, 170, 85, .14);
+    --critical: #E27A63;  --critical-bg: rgba(226, 122, 99, .14);
+    --info: #7BAAD9;      --info-bg: rgba(123, 170, 217, .14);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, .35);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, .5);
+
+    color-scheme: dark;
+  }
+}
+
+/* =====================================================================
+   Base
+   ===================================================================== */
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--jade-100);
+    color: var(--jade-700);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--jade-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: .001ms !important;
+      transition-duration: .001ms !important;
+    }
+  }
+}
+
+/* =====================================================================
+   Small reusable helpers (gradients & scrollbars that are awkward as utils)
+   ===================================================================== */
+@layer components {
+  .bg-sidebar {
+    background: linear-gradient(185deg, var(--jade-900), var(--jade-950));
+  }
+
+  .bg-brand-panel {
+    background:
+      radial-gradient(120% 90% at 15% 0%, var(--jade-700), transparent 60%),
+      linear-gradient(200deg, var(--jade-800), var(--jade-950));
+  }
+
+  .bg-aura {
+    background:
+      radial-gradient(ellipse 900px 620px at 50% -12%, var(--jade-100), transparent),
+      var(--paper);
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 1px 20px rgba(0, 0, 0, .25);
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hide-scroll {
+    scrollbar-width: none;
+  }
+  .hide-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .thin-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .thin-scroll::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 8px;
+  }
+}
