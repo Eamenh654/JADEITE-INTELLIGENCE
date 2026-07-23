@@ -8,6 +8,15 @@ import KPIs from "../pages/KPIs/KPIs";
 import Bonuses from "../pages/Bonuses/Bonuses";
 import Financials from "../pages/Financials/Financials";
 import Ecommerce from "../pages/Ecommerce/Ecommerce";
+import Integrations from "../pages/Integrations/Integrations";
+import AiAssistant from "../pages/AiAssistant/AiAssistant";
+import Tasks from "../pages/Tasks/Tasks";
+import Approvals from "../pages/Approvals/Approvals";
+import Documents from "../pages/Documents/Documents";
+import Reports from "../pages/Reports/Reports";
+import Notifications from "../pages/Notifications/Notifications";
+import AuditHistory from "../pages/AuditHistory/AuditHistory";
+import Users from "../pages/Users/Users";
 import Placeholder from "../pages/Placeholder/Placeholder";
 import { navGroups } from "../lib/nav";
 
@@ -20,6 +29,15 @@ const built: Record<string, React.ReactElement> = {
   "/bonuses": <Bonuses />,
   "/financials": <Financials />,
   "/ecommerce": <Ecommerce />,
+  "/integrations": <Integrations />,
+  "/ai": <AiAssistant />,
+  "/tasks": <Tasks />,
+  "/approvals": <Approvals />,
+  "/documents": <Documents />,
+  "/reports": <Reports />,
+  "/notifications": <Notifications />,
+  "/audit-history": <AuditHistory />,
+  "/users": <Users />,
 };
 
 // Every nav destination except Home renders its built page or the Placeholder.
